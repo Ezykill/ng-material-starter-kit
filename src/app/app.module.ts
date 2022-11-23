@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 import {ProductListComponentModule} from "./components/product-list/product-list.component-module";
 import {CategoryListComponentModule} from "./components/category-list/category-list.component-module";
+import {CryptoListComponentModule} from "./components/crypto-list/crypto-list.component-module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CategoryListComponentModule} from "./components/category-list/category-l
     BrowserAnimationsModule,
     HttpClientModule,
     ProductListComponentModule,
-    CategoryListComponentModule
+    CategoryListComponentModule,
+    CryptoListComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
