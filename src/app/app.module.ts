@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {ProductListComponentModule} from "./components/product-list/product-list.component-module";
 import {CategoryListComponentModule} from "./components/category-list/category-list.component-module";
 import {CryptoListComponentModule} from "./components/crypto-list/crypto-list.component-module";
+import {HolidayListComponentModule} from "./components/holiday-list/holiday-list.component-module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {CryptoListComponentModule} from "./components/crypto-list/crypto-list.co
     HttpClientModule,
     ProductListComponentModule,
     CategoryListComponentModule,
-    CryptoListComponentModule
+    CryptoListComponentModule,
+    HolidayListComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
