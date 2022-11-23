@@ -1,11 +1,15 @@
 <mat-card>
   <mat-card-title>Holidays</mat-card-title>
   <mat-card-content>
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let item of list$ | async">
-  {{item.name}}
+<button>
+  <mat-form-field appearance="fill">
+  <mat-label>Choose an option</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let item of list$ | async" [value]="item">
+     {{item.name}}
+</mat-option>
+   </mat-select>
+</mat-form-field>
 </button>
-</mat-menu>
   </mat-card-content>
 </mat-card>
