@@ -5,6 +5,7 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { CryptoListComponent } from './components/crypto-list/crypto-list.component';
 import { HolidayListComponent } from './components/holiday-list/holiday-list.component';
 import { CategoryCheckboxComponent } from './components/category-checkbox/category-checkbox.component';
+import { CategoryMenuComponent } from './components/category-menu/category-menu.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -14,9 +15,10 @@ import { CryptosServiceModule } from './services/cryptos.service-module';
 import { HolidayListComponentModule } from './components/holiday-list/holiday-list.component-module';
 import { HolidaysServiceModule } from './services/holidays.service-module';
 import { CategoryCheckboxComponentModule } from './components/category-checkbox/category-checkbox.component-module';
+import { CategoryMenuComponentModule } from './components/category-menu/category-menu.component-module';
 
 @NgModule({
-  imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent }, { path: 'categories', component: CategoryListComponent }, { path: 'crypto', component: CryptoListComponent }, { path: 'public-holidays', component: HolidayListComponent }, { path: 'checkbox-categories', component: CategoryCheckboxComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoListComponentModule, CryptosServiceModule, HolidayListComponentModule, HolidaysServiceModule, CategoryCheckboxComponentModule],
+  imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent }, { path: 'categories', component: CategoryListComponent }, { path: 'crypto', component: CryptoListComponent }, { path: 'public-holidays', component: HolidayListComponent }, { path: 'checkbox-categories', component: CategoryCheckboxComponent }, { path: 'categories-menu', component: CategoryMenuComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoListComponentModule, CryptosServiceModule, HolidayListComponentModule, HolidaysServiceModule, CategoryCheckboxComponentModule, CategoryMenuComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
