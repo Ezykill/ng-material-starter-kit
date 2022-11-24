@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ProductService } from '../../services/product.service';
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -23,6 +23,12 @@ export class ProductFormComponent {
   }
 
   onProductFormSubmitted(productForm: FormGroup): void {
-    this._productService.create(productForm.getRawValue()).subscribe();
+    this._productService.create({
+      title: productForm.get('title')?.value,
+      category: productForm.get('category')?.value,
+      price: productForm.get('price')?.value,
+      description: productForm.get('description')?.value,
+      image: productForm.get('image')?.value,
+    }).subscribe();
   }
 }
