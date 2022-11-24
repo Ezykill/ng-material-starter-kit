@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -20,9 +19,9 @@ export class ProductFormComponent {
       image: new FormControl()
     });
 
-
   constructor(private _productService: ProductService) {
   }
+
 
   onProductFormSubmitted(productForm: FormGroup): void {
     this._productService.create({
