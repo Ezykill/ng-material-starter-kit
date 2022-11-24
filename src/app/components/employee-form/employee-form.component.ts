@@ -20,10 +20,6 @@ export class EmployeeFormComponent {
   }
 
   onEmployeeFormSubmitted(employeeForm: FormGroup): void {
-    this._employeeService.create({
-      name: employeeForm.get('name')?.value,
-      salary: employeeForm.get('salary')?.value,
-      age: employeeForm.get('age')?.value,
-    }).subscribe();
+    this._employeeService.create(employeeForm.getRawValue()).subscribe();
   }
 }
