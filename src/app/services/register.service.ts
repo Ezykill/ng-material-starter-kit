@@ -8,7 +8,7 @@ export class RegisterService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  create(register: registerModel): Observable<RegisterModel> {
-    return this._httpClient.post('https://fakestoreapi.com/users', register);
+  create(register: RegisterModel): Observable<RegisterModel> {
+    return this._httpClient.post<RegisterModel>('https://fakestoreapi.com/users', register);
   }
 }
