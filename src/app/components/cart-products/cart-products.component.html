@@ -1,6 +1,7 @@
-<ng-container *ngIf="cart$ | async as item">
-  
+<mat-card *ngIf="cart$ | async as item">
+<mat-card-content>
   <h1>Cart</h1>
   <h2>You have {{checkQuantity(item.products)}} products in the cart</h2>
 
-</ng-container>
+</mat-card-content>
+</mat-card>
