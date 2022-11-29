@@ -2,10 +2,9 @@
   <mat-card-content>
 
   <h1>User details</h1>
-    <h2 *ngFor="let item of item.name | keyvalue">{{item.value}}</h2>
+    <h2 *ngFor="let item of item.name | keyvalue" style="display: inline"> {{item.value}} </h2>
     <h3>{{item.email}}</h3>
-
-
+    
   </mat-card-content>
 </mat-card>
 
