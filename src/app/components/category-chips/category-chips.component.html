@@ -1,0 +1,9 @@
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip *ngFor="let item of list$ | async">
+ {{item}}
+</mat-chip>
+</mat-chip-list>
+<br>
+<mat-button-toggle>
+  <a href="http://localhost:4200/create-product">Add product</a>
+  </mat-button-toggle>
