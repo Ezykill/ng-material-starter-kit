@@ -1,0 +1,9 @@
+<mat-card-content>
+<mat-card-title><h1>Jobs</h1></mat-card-title>
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let item of list$ | async">
+    <h2>{{item.title}}</h2>
+    <a [routerLink]="['/jobs', item.id]" class="btn btn-primary">View Details</a>
+  </mat-list-item>
+</mat-list>
+</mat-card-content>
