@@ -9,7 +9,7 @@ import {ProductsServiceModule} from './services/products.service-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{
-    path: 'products/:category',
+    path: 'products',
     component: FilteredProductListComponent
   }]), FilteredProductListComponentModule, CategoriesServiceModule, ProductsServiceModule],
   exports: [RouterModule]
