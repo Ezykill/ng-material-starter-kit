@@ -8,7 +8,7 @@ export class EmployeesService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  getAll(id: string): Observable<EmployeeModel[]> {
+  getAll(): Observable<EmployeeModel[]> {
     return this._httpClient.get<EmployeeModel[]>('https://dummy.restapiexample.com/employees');
   }
 }
