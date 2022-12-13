@@ -12,25 +12,29 @@ import {map} from "rxjs/operators";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeesListComponent {
-  private _orderSubject: BehaviorSubject<string> = new BehaviorSubject<string>('asc');
-  public order$: Observable<string> = this._orderSubject.asObservable();
+  private _ageRangeSubject: BehaviorSubject<string> = new BehaviorSubject<string>('all');
+  public ageRange$: Observable<string> = this._ageRangeSubject.asObservable();
   readonly employees$: Observable<PersonModel[]> = combineLatest([
     this._employeesService.getAll(),
-    this.order$
+    this.ageRange$
   ]).pipe(
-    map(([employees, order]: [PersonModel[], string]) => {
-      return employees.sort((a, b) => {
-        if(a.salary > b.salary) return order === 'asc' ? 1 : -1;
-        if(a.salary < b.salary) return order === 'asc' ? -1 : 1;
-        return 0;
+    map(([employees, ageRange]: [PersonModel[], string]) => {
+      return employees.filter(employee => {
+        if(ageRange === 'all') return true;
+        if(ageRange === '18-25') return employee.age >= 0 && employee.age <= 20;
+        if(ageRange === '18-25') return employee.age >= 21 && employee.age <= 30;
+        if(ageRange === '18-25') return employee.age >= 31 && employee.age <= 40;
+        if(ageRange === '18-25') return employee.age >= 41 && employee.age <= 50;
+        if(ageRange === '18-25') return employee.age >= 51 && employee.age <= 100;
+        return false;
       })
     })
   );
-  public orders: Observable<string[]> =  of(['asc', 'desc'])
+  public ageRanges: Observable<string[]> =  of(['all', '0-20', '21-30', '31-40', '41-50', '51-100'])
   constructor(private _employeesService: EmployeesService) {
   }
 
-  sort(order: string): void {
-    this._orderSubject.next(order);
+  filterByAgeRange(ageRange: string): void {
+    this._ageRangeSubject.next(ageRange);
   }
 }
