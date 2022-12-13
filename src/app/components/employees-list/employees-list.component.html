@@ -15,7 +15,7 @@
   <mat-card-title>Employees</mat-card-title>
   <mat-card-content>
     <mat-list role="list">
-      <mat-list-item role="listitem" *ngFor="let item of employees$ | async">{{item.name}} {{item.salary}}</mat-list-item>
+      <mat-list-item role="listitem" *ngFor="let item of employees$ | async">Name: {{item.name}} age: {{item.age}} salary: {{item.salary}}</mat-list-item>
     </mat-list>
   </mat-card-content>
 </mat-card>

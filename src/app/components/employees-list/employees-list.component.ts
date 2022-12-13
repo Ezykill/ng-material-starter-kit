@@ -21,11 +21,11 @@ export class EmployeesListComponent {
     map(([employees, ageRange]: [PersonModel[], string]) => {
       return employees.filter(employee => {
         if(ageRange === 'all') return true;
-        if(ageRange === '18-25') return employee.age >= 0 && employee.age <= 20;
-        if(ageRange === '18-25') return employee.age >= 21 && employee.age <= 30;
-        if(ageRange === '18-25') return employee.age >= 31 && employee.age <= 40;
-        if(ageRange === '18-25') return employee.age >= 41 && employee.age <= 50;
-        if(ageRange === '18-25') return employee.age >= 51 && employee.age <= 100;
+        if(ageRange === '0-20') return employee.age >= 0 && employee.age <= 20;
+        if(ageRange === '21-30') return employee.age >= 21 && employee.age <= 30;
+        if(ageRange === '31-40') return employee.age >= 31 && employee.age <= 40;
+        if(ageRange === '41-50') return employee.age >= 41 && employee.age <= 50;
+        if(ageRange === '51-100') return employee.age >= 51 && employee.age <= 100;
         return false;
       })
     })
