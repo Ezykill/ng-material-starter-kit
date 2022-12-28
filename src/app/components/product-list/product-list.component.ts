@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 import { Observable, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ProductModel } from '../../models/product.model';
-import { ProductsService } from '../../services/products.service';
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +18,7 @@ export class ProductListComponent {
     switchMap(data => this._productsService.getOne(data))
   );
 
-  constructor(private _productsService: ProductsService) {
+  constructor(private _productsService: ProductService) {
   }
 
   selectProduct(id: string): void {
