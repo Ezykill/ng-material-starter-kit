@@ -11,4 +11,8 @@ export class ProductService {
   getOne(id: string): Observable<ProductModel> {
     return this._httpClient.get<ProductModel>(`https://fakestoreapi.com/products/${id}`);
   }
+
+  getAll(): Observable<ProductModel[]> {
+    return this._httpClient.get<ProductModel[]>(`https://fakestoreapi.com/products`);
+  }
 }
